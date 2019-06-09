@@ -1,4 +1,4 @@
-# staples-shop
+# e-commerce
 
 ## Project setup
 ```
