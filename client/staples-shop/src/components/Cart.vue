@@ -33,6 +33,8 @@
         position: fixed;
         left: 14%;
         top: 60px;
+        max-height: 60%;
+        overflow-y: auto;
 
         @media (min-width: 768px) {
             top: 140px;

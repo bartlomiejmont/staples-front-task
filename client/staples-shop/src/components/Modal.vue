@@ -76,6 +76,8 @@
         position: fixed;
         left: 8%;
         top: 20px;
+        max-height: 90%;
+        overflow-y: auto;
 
         @media (min-width: 768px) {
             top: 100px;
