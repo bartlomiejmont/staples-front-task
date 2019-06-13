@@ -87,22 +87,26 @@ export default {
     },
 
     addItemToCart (item, q) {
-      item.quantity = q;
-      this.cart.push(item)
-      console.log(this.cart)
+      if(!this.cart.includes(item)) {
+        item.quantity = q;
+        this.cart.push(item);
+      }
+      else {
+        item.quantity += q;
+      }
     },
 
     pageChange (page) {
       this.page = page;
       this.startup();
-      // eslint-disable-next-line no-console
-      //console.log(page);
     },
 
-    rageChange (start, end) {
-      // eslint-disable-next-line no-console
-      //console.log(start, end);
-    },
+    //to implement
+
+    // rageChange (start, end) {
+    //   // eslint-disable-next-line no-console
+    //   //console.log(start, end);
+    // },
 
     handleModalOpen(item) {
       this.modalOpen = true;
@@ -133,9 +137,6 @@ export default {
     startup: function () {
       axios.get(`${API}?_page=${(this.page + 1)}&_limit=12`)
               .then((response) => {
-
-                // eslint-disable-next-line no-console
-                //console.log(response.data)
                 this.results = response.data;
                 this.search = true;
 
